@@ -1,17 +1,21 @@
-Constantinescu Radu-Nicolae
-334AC
+Detalii generale
+https://ocw.cs.pub.ro/courses/ac-is/teme/tema2
 
-Starile alese: 
-starting_pos 
-punctele cardinale (N,S,E,V)
-verify_pos
-empty
-wall
+Detalii implementare
+Omuletul din labirint nu dispune de memorie(nu retine calea pe care a urmat-o) si nici nu poate stii ce se afla in jurul lui(perete/culoar) decat la urmatorul ciclu de ceas. Am decis sa folosesc punctele cardinale pentru a putea decide unde sa caute peretele(din dreapta) si in ce directie sa o ia dupa ce l-a gasit. 
+Pentru inceput, omuletul va verifica random una din pozitiile din jurul lui. Exista 2 posibile situatii: 
+1. A gasit perete, caz in care se va roti 90' si va verifica urmatoarea pozitie 
+2. A gasit culoar, caz in care va inainta in labirint
 
-Variabile ajutatoare:
-state, next_state, prev_state si goBack
-goBack ne spune ca a gasit peretele din dreapta si s-a intors.
+Starile alese 
+  - starting_pos 
+  - punctele cardinale (N,S,E,V)
+  - verify_pos
+  - empty
+  - wall
 
-Daca a inaintat in labirint (in orice directie) si gaseste culoar, in functie de prev_state va cauta peretele in dreapta.
-Cand gaseste perete, activez variabila goBack si se intoarce (nemodificand prev_state pentru a sti in ce directie a gasit peretele). Apoi, in functie de prev_state, stie in ce directie va merge.
-
+Variabile ajutatoare: 
+  - state
+  - next_state 
+  - prev_state 
+  - goBack
